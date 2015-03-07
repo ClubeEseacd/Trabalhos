@@ -1,0 +1,11 @@
+Exercicio 1. Desenhar uma stick figure
+É possivel ajustar o tamanho do ecra ao tamanho do monitor usando displayHeight e displayWidth como parametros no size(,)
+Também é possivel usar width e height como parametro e estes vao ter o valor do tamanho que deram à janela.
+
+Exercicio 2.Desenhar uma stick figure com variaveis
+Em vez de rect(100,100,200,200), por exemplo, tenham algo como rect(a,b,a,d)
+
+Exercicio 3.Desenho livre
+
+Exercicio 4. Fazer um boneco que se adapte a qualquer janela escolhida (200,200 minimo)
+
