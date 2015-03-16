@@ -1,6 +1,10 @@
  class Julio{
 float cx, cy,size;
 float xmax,ymax,xmin,ymin;
+boolean clear=true; 
+PVector mouse = new PVector();
+float pmx,pmy;
+
   Julio (float x, float y,float mox,float moy, float sz){
    size=sz ;
    cx= map(x,0,width,-2,2);
@@ -149,10 +153,7 @@ int hh = height/2;
       }
    updatePixels();
    color cont= get(width/2,height/2);  
-   line(width/2,0,width/2,height/2-1);
-   line(0,height/2,width/2-1,height/2);
-   line(width/2,height/2+1,width/2,height);
-   line(width/2+1,height/2,width,height/2);
+   
    fill(255);
   
    if (cont==-3618616 ){
@@ -163,8 +164,14 @@ int hh = height/2;
    }
    text(mx,400,20);
    text(my,400,30);
-   
-  
+   ctemp(mx,my);
+  if (clear = true){
+ 
+  mouse.set(pmx,pmy); 
+ 
+   clear = false;
+ 
+ }
     }
     
  void save(){
@@ -177,13 +184,25 @@ int hh = height/2;
   return size;
  } 
  
- PVector  mouse(){
-   float tempmx =map(mx,2,-2,width,0);
-   float tempmy =map(my,1.5,-1.5,0,height);
-   PVector mouse = new PVector (tempmx,tempmy);
- 
+ PVector  mmouse(){
+   
+    mouse.set(pmx,pmy); 
    return mouse;
  }
-} 
+ 
+ 
+   void cleari(){
+  
+ clear = true ;
+}
+void ctemp(float tempx,float tempy){
+ 
+ pmx = map(tempx,2,-2,width,0);
+ pmy = map(tempy,1.5,-1.5,0,height); 
+ 
 
+}
+
+
+} 
 

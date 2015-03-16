@@ -13,6 +13,7 @@ float xi,yi,xf,yf,c,mx,my;
 int i,x,y;
   PGraphics djulia; 
  PImage prejulia;
+ PVector mouse ;
 void setup(){
   size(800,800);
    background(255);
@@ -34,16 +35,23 @@ julia.preview();
 
 
   void mousePressed(){
+    julia.cleari();
    Julio julia =  new Julio(width/2,height/2,mouseX,mouseY,2);
    
    
    julia.drawjulia();
+   line(width/2,0,width/2,height/2-1);
+   line(0,height/2,width/2-1,height/2);
+   line(width/2,height/2+1,width/2,height);
+   line(width/2+1,height/2,width,height/2);
     newsize = julia.bound();
-    
+    mouse = julia.mmouse();
   }
   
   void keyPressed(){
-    PVector mouse = julia.mouse();
+    
+    
+    
   newsize=newsize/2;
 
   Julio julia = new Julio(mouseX,mouseY,mouse.x,mouse.y,newsize);
